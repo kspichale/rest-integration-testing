@@ -8,8 +8,8 @@
       http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd  
             http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd">
 
-	<jaxrs:client id="simpleClient" address="http://localhost:${myjetty.port}/rest-integration-testing/api/"
-		serviceClass="com.kspichale.rest.service.SimpleService">
+	<jaxrs:client id="vehicleFleetClient" address="http://localhost:${myjetty.port}/rest-integration-testing/api/"
+		serviceClass="com.kspichale.rest.service.VehicleFleetService">
 		<jaxrs:headers>
 			<entry key="Accept" value="application/json, application/xml" />
 		</jaxrs:headers>
