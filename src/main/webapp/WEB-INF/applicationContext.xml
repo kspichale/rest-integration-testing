@@ -14,7 +14,7 @@
 
 	<bean id="logInbound" class="org.apache.cxf.interceptor.LoggingInInterceptor" />
 	<bean id="logOutbound" class="org.apache.cxf.interceptor.LoggingOutInterceptor" />
-	<bean id="vehicleServiceBean" class="com.kspichale.rest.service.PersistentVehicleService" />
+	<bean id="vehicleServiceBean" class="com.kspichale.rest.service.VehicleServiceImpl" />
 
 	<cxf:bus>
 		<cxf:inInterceptors>

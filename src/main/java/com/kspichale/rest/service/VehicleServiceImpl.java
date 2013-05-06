@@ -12,12 +12,12 @@ import javax.ws.rs.Produces;
 import com.kspichale.rest.domain.Vehicle;
 import com.kspichale.rest.domain.VehicleList;
 
-public class PersistentVehicleService implements VehicleFleetService {
+public class VehicleServiceImpl implements VehicleFleetService {
 
 	private final Map<Integer, Vehicle> availableVehicles = new HashMap<Integer, Vehicle>();
 	private final Map<Integer, Vehicle> notAvailableVehicles = new HashMap<Integer, Vehicle>();
 
-	public PersistentVehicleService() {
+	public VehicleServiceImpl() {
 	}
 
 	@Override
@@ -49,7 +49,6 @@ public class PersistentVehicleService implements VehicleFleetService {
 	@Produces("application/json")
 	@Path("/{id}/available/{available}")
 	public void setAvailability(@PathParam("id") int vehicleId, @PathParam("available") boolean available) {
-		System.out.println("start setAvailability");
 		final Vehicle vehicle;
 		if (availableVehicles.containsKey(vehicleId)) {
 			vehicle = availableVehicles.remove(vehicleId);
@@ -63,7 +62,6 @@ public class PersistentVehicleService implements VehicleFleetService {
 			notAvailableVehicles.put(vehicleId, vehicle);
 			availableVehicles.remove(vehicleId);
 		}
-		System.out.println("finish setAvailability");
 	}
 
 	@Override
